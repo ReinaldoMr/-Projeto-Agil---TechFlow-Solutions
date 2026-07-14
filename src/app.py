@@ -17,7 +17,8 @@ def adicionar():
     tarefas.append({
         'id': len(tarefas),
         'titulo': titulo,
-        'descricao': descricao
+        'descricao': descricao,
+        'status': 'Pendente'
     })
 
     return redirect('/')
@@ -46,7 +47,7 @@ def editar(id):
 
                 <button type="submit">Salvar Alterações</button>
             </form>
-            '''
+            ''' 
 @app.route('/excluir/<int:id>')
 def excluir(id):
     global tarefas
@@ -54,6 +55,18 @@ def excluir(id):
     tarefas = [tarefa for tarefa in tarefas if tarefa['id'] != id]
 
     return redirect('/')
+
+
+@app.route('/concluir/<int:id>')
+def concluir(id):
+
+    for tarefa in tarefas:
+        if tarefa['id'] == id:
+            tarefa['status'] = 'Concluída'
+
+    return redirect('/')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
