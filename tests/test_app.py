@@ -20,7 +20,21 @@ class TestSistema(unittest.TestCase):
             },
             follow_redirects=True
         )
+        self.assertEqual(response.status_code, 200)
 
+    def test_excluir_tarefa(self):
+        # Primeiro cadastra uma tarefa para depois excluí-la
+        self.app.post(
+            '/adicionar',
+            data={
+                'titulo': 'Tarefa para excluir',
+                'descricao': 'Descricao teste'
+            },
+            follow_redirects=True
+        )
+
+        # Tenta excluir a tarefa de id 0
+        response = self.app.get('/excluir/0', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
 if __name__ == '__main__':
