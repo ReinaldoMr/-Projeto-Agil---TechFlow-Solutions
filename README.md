@@ -1,4 +1,4 @@
-# -Projeto-Agil---TechFlow-Solutions
+# Projeto-Agil-TechFlow-Solutions
 # Sistema de Gerenciamento de Tarefas
 
 ## Descrição do Projeto
@@ -24,6 +24,13 @@ O sistema possui como funcionalidade principal o gerenciamento de tarefas por me
 O escopo deste projeto contempla apenas as funcionalidades essenciais para demonstrar a aplicação dos conceitos da disciplina, não incluindo recursos avançados como autenticação de usuários, banco de dados em nuvem ou controle de permissões.
 
 ---
+
+## Mudança de Escopo
+
+Durante o desenvolvimento foi identificada a necessidade de adicionar uma nova funcionalidade ao sistema: a marcação de tarefas como concluídas.
+
+A funcionalidade foi implementada após o planejamento inicial do projeto, simulando uma alteração de requisito durante o ciclo de desenvolvimento, situação comum em projetos reais de software.
+
 
 ## Metodologia Utilizada
 
