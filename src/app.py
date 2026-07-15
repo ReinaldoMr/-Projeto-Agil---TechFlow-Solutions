@@ -4,10 +4,12 @@ app = Flask(__name__)
 
 tarefas = []
 
+#retorna a intex para exporta
 @app.route('/')
 def home():
     return render_template('index.html', tarefas=tarefas)
 
+#rota para adicionar tarefa
 @app.route('/adicionar', methods=['POST'])
 def adicionar():
 
@@ -23,6 +25,7 @@ def adicionar():
 
     return redirect('/')
 
+#rota para editar tarefa
 @app.route('/editar/<int:id>', methods=['GET', 'POST'])
 def editar(id):
 
@@ -48,6 +51,8 @@ def editar(id):
                 <button type="submit">Salvar Alterações</button>
             </form>
             ''' 
+            
+#rota para Excluir uma tarefa            
 @app.route('/excluir/<int:id>')
 def excluir(id):
     global tarefas
@@ -57,6 +62,7 @@ def excluir(id):
     return redirect('/')
 
 
+#rota para concluir uma tarefa 
 @app.route('/concluir/<int:id>')
 def concluir(id):
 
